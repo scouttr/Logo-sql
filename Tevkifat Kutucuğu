@@ -1,0 +1,15 @@
+Tevkifat Uygulansın Onay Kutucuğu
+
+UPDATE LG_001_ITEMS SET CANDEDUCT='1' WHERE CANDEDUCT ='0'
+
+
+Kontrol et.....
+
+SELECT CANDEDUCT FROM LG_001_ITEMS WHERE='0'
+
+==========================================
+Tevkifatlı fatura keserken lazım....
+
+0 = TIKLANMAMIŞ PASİF
+
+1= TIKLANMIŞ AKTİF
