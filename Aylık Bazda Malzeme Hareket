@@ -1,0 +1,29 @@
+Select
+
+I.NAME [ADI], I.CODE [KODU],MONTH(S.DATE_)Ay, sum((S.AMOUNT)) Satış
+
+FROM LG_001_05_STLINE S
+
+JOIN LG_001_ITEMS I ON I.LOGICALREF=S.STOCKREF
+
+WHERE LINETYPE=0 AND S.TRCODE=8
+
+GROUP BY CUBE(I.CODE,I.NAME, MONTH(S.DATE_) )
+
+==============================================================================
+
+Select
+
+I.NAME AS ADI, I.CODE AS KODU,MONTH(S.DATE_)Ay, sum((S.AMOUNT)) Satış
+
+FROM LG_001_05_STLINE S
+
+JOIN LG_001_ITEMS I ON I.LOGICALREF=S.STOCKREF
+
+WHERE LINETYPE=0 AND S.TRCODE=8
+
+GROUP BY ROLLUP(I.CODE,I.NAME, MONTH(S.DATE_))
+
+====================================
+
+İki sorgu arasındaki te fark GROUP BY CUBE ile GROUP BY ROLLUP listelemesi....Birinde Malzeme üzerinden yürüyor diğeri ise aylık bazda yürüyor...
