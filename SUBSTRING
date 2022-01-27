@@ -1,3 +1,5 @@
+- SUBSTRING ile hücre içerisindeki karakterleri birbirinden ayırma *
+
 kodumuz DT.123456/12345678910
 SELECT CODE, SUBSTRING(CODE,1,9)
 
