@@ -1,0 +1,19 @@
+LEFT(kolonadi,CHARINDEX('/',kolonadi)-1)
+
+İSTENİLEN: / Karakteri sonrası tüm karakterleri silme...
+
+=======================================
+
+Önce sorgu kontrol.....
+
+SELECT CODE=LEFT(CODE, CHARINDEX('/',CODE)-1) FROM LG_001_ITEMS WHERE CODE LIKE 'TM%' =>> tm ile başlayan tüm kodlar
+
+Sonra Güncelleme.........
+
+UPDATE LG_001_ITEMS SET CODE=LEFT(CODE, CHARINDEX('/',CODE)-1) WHERE CODE LIKE 'TM%'
+
+TEHLİKELİ DURUM : KOD FAZLALIĞI SİLİNDİKTEN SONRA ÇAKIŞMA OLURSA ?
+
+Invalid length parameter passed to the LEFT or SUBSTRING function.
+
+The statement has been terminated.
