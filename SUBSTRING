@@ -1,0 +1,21 @@
+kodumuz DT.123456/12345678910
+SELECT CODE, SUBSTRING(CODE,1,9)
+
+AS "/ Karakterden Öncesi",
+
+SUBSTRING(CODE,11,22) AS "/ Karakterden Sonrası"
+
+FROM LG_001_ITEMS
+
+WHERE CODE LIKE 'DT.%'
+
+====================================
+
+geliştirilebilir bir sorgu örneğin ITEMS tablosundaki Code sütunundan bir kısım veriyi alıp Name kategorisine yada farklı sütunlara kopyalamaya ya da taşıma....Bunun update versiyonu üzerinde çalışmam gerekiyor.
+
+EDIT:
+UPDATE LG_001_ITEMS SET PRODUCERCODE = SUBSTRING(CODE,11,22) WHERE CODE= 'DT.%'
+
+kodumuz DT.123456/12345678910
+Yeni Yeri Üretici Kodu : / sonrası 11. karakterden itibaren 12345678910 olarak kopyalandı...
+esinlenme =https://www.ismailgursoy.com.tr/substring-fonksiyonu/
