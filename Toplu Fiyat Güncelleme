@@ -1,0 +1,17 @@
+UPDATE LG_001_PRCLIST SET PRICE= PRICE*'1.05' WHERE PTYPE= '2' AND CODE= 'ÜRÜN SATIŞ FİYAT KODU'
+
+SELECT CODE,PRICE, * FROM LG_001_PRCLIST WHERE PTYPE= '2' AND CODE= 'ÜRÜN SATIŞ FİYAT KODU'
+
+PTYPE=1 ALIŞ FİYATLARI
+
+PTYPE=2 SATIŞ FİYATLARI
+
+Örnekte ürünün üzerine %5 fiyat ekledim. Code yerine Grpcode olarak seçim yapılırsa marka olarak gruplandırılmış tüm ürünlerin yüzde olarak fiyatını değiştirir. 
+
+UPDATE LG_001_PRCLIST SET PRICE= PRICE*'1.05' WHERE PTYPE= '2' AND GRPCODE= 'ÜRÜN GRUP KODU'
+
+Eğer %100 üzerinde bir oran zam uygulanacaksa değer PRICE* '2' olarak çarpılacak.
+
+iSKONTO YAPMAK İÇİN 1 DEĞERİNİN ALTINDA DEĞER GİRİLMELİ
+
+ÖRNEK % YÜZDE 10 İSKONTO İÇİ 0.90
